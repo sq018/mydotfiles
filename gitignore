@@ -1,0 +1,12 @@
+# Foler view config files
+.DS_Store
+# Thumbnail cache files
+._*
+# Vim swap files
+*.sw[nop]
+
+db/*.sqlite3
+log/*.log
+tags
+tmp/**/*
+*.pyc

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>background</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg9wagj2DPyPiPYNIBtQ9g2ZmZj+G
+	</data>
+	<key>border</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMChARm
+	ZmZmAAAAAIY=
+	</data>
+	<key>cornerRoundness</key>
+	<integer>1</integer>
+	<key>credits</key>
+	<string>Matt Gordon</string>
+	<key>imageStyle</key>
+	<integer>5</integer>
+	<key>name</key>
+	<string>Norway Theme</string>
+	<key>resultPaddingSize</key>
+	<integer>3</integer>
+	<key>resultSelectedBackgroundColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg8XERD6Dn56ePoPt7Gw+g6mgZz+G
+	</data>
+	<key>resultSelectedSubtextColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg8jHRz+D0dBQP4Pd3Fw/AYY=
+	</data>
+	<key>resultSelectedTextColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg8jHRz+D0dBQP4Pd3Fw/AYY=
+	</data>
+	<key>resultSubtextColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg8jHRz+D0dBQP4Pd3Fw/AYY=
+	</data>
+	<key>resultSubtextFont</key>
+	<string>System Light</string>
+	<key>resultSubtextFontSize</key>
+	<integer>0</integer>
+	<key>resultTextColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg6WkpD6Di4oKP4Osqys/AYY=
+	</data>
+	<key>resultTextFont</key>
+	<string>System Light</string>
+	<key>resultTextFontSize</key>
+	<integer>2</integer>
+	<key>scrollbarColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMChARm
+	ZmZmAAAAg83MzD2G
+	</data>
+	<key>searchBackgroundColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg6WkpD6Di4oKP4Osqys/g9cmZj+G
+	</data>
+	<key>searchFont</key>
+	<string>System Light</string>
+	<key>searchFontSize</key>
+	<integer>3</integer>
+	<key>searchForegroundColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg+zhOT+DaoZEP4Poq1M/AYY=
+	</data>
+	<key>searchPaddingSize</key>
+	<integer>0</integer>
+	<key>searchSelectionBackgroundColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMGhANA
+	QECEhIQITlNTdHJpbmcBlIQBKwZTeXN0ZW2GhJaYG3NlbGVjdGVkVGV4dEJhY2tncm91
+	bmRDb2xvcoaEk5UDhAJmZoOrqio/AYaG
+	</data>
+	<key>searchSelectionForegroundColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJm
+	ZgABhg==
+	</data>
+	<key>separatorColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMChARm
+	ZmZmAAAAAIY=
+	</data>
+	<key>shortcutColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg6WkpD6Di4oKP4Osqys/AYY=
+	</data>
+	<key>shortcutFont</key>
+	<string>System Light</string>
+	<key>shortcutFontSize</key>
+	<integer>2</integer>
+	<key>shortcutSelectedColor</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmg6WkpD6Di4oKP4Osqys/AYY=
+	</data>
+	<key>uid</key>
+	<string>alfred.theme.custom.E7047399-CD13-48B4-8D20-8724A2D8747D</string>
+	<key>widthSize</key>
+	<integer>3</integer>
+</dict>
+</plist>
