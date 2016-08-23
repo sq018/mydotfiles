@@ -5,30 +5,25 @@ so ~/.vim/plugins.vim
 
 syntax enable
 set background=dark
-colorscheme spacedust
+colorscheme dracula
 
 
 let mapleader=','
 
 " /----------------- VISUALS ------------------/
 
-" style up popup menu
-" highlight Pmenu guibg=brown gui=bold
-
-" set font face and size
 set guifont=Fira\ Code:h14
 set macligatures
 
 " set mvim line height, set iterm lh in the app's setting
 set linespace=3
 
-" use 256 colors on cterm Vim
-set t_CO=256
+" no blinking cursor
+set gcr=a:blinkon0
 
-" set a mark for col 80th
-set colorcolumn=80
-highlight ColorColumn ctermbg=darkgray guibg=#364757
-
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+"
 " set line display
 set number
 " set line number background
@@ -36,44 +31,51 @@ highlight LineNr guibg=bg
 
 " disable gui tabs
 set guioptions-=e
-
 " normally disable scrollbar and when split
 set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 
+" set a mark for col 80th
+set colorcolumn=80
+highlight ColorColumn ctermbg=darkgray guibg=#444759
+
 " set vertical split bar syle
 set fillchars=
-hi vertsplit guifg=#1D2D3F
+hi vertsplit guifg=#444759
+
+" use 256 colors on cterm Vim
+set t_CO=256
 
 " /----------------- BEHAVIORS ------------------/
+
+" make backspace behave like every other editor.
+set backspace=indent,eol,start
+
+" buffers become hidden if they are abandoned, no prompt save, yes!
+set hidden
 
 " detect file change outside Vim
 set autoread
 
-" auto write files
-" set autowriteall
+" set noshowmode
+set showcmd
 
-" set wrap 80 columns
-" set wrapmargin=80
-
-" keep cursor visible within 5 lines when scrolling
-set scrolloff=5
-
-set nobackup
-set noswapfile
-set linebreak
-" disable vim mode info
-set noshowmode
-
-" lines' width is 80 col
+" hard wrap lines by inserting newline, using gq to reformat
 set textwidth=80
+
+" keep cursor visible within 3 lines when scrolling
+set scrolloff=3
+
+" no backups
+set nobackup nowritebackup noswapfile
+
 
 " search settings
 set incsearch                       " find the next match as we type the search
 set hlsearch                        " highlight searches by default
-set ic                              " ignore case
+set ignorecase
 set smartcase                       " override ic with search pattern
 
 " indentation settings
@@ -81,29 +83,28 @@ set autoindent                      " auto indent based on line above
 set smartindent                     " smarter indent for C-like languages
 
 " tabs settings
-set expandtab                       " convert tab to spaces
+set expandtab                       " use spaces instead of tabs
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set smarttab
 
 " split windows management
 set splitbelow
 set splitright
 
-" make backspace behave like every other editor.
-set backspace=indent,eol,start
-
-
 " /----------------- MAPPINGS ------------------/
 
-nmap <Leader>ev :tabedit $MYVIMRC<cr>
-nmap <Leader>ep :vsp ~/.vim/plugins.vim<cr>
-nmap <Leader><space> :nohlsearch<cr>
-" auto indent tag in insert
-inoremap <M-o> <cr><ESC>O<tab>
+inoremap jk <esc>
 
-" compile js files
-nnoremap <Leader><Leader>c :!node %<cr>
+nnoremap <Leader>ev :tabedit $MYVIMRC<cr>
+nnoremap <Leader>ep :vsp $HOME/.vim/plugins.vim<cr>
+nnoremap <Leader>sv :so $MYVIMRC<cr>
+
+" nnoremap <Leader><space> :nohlsearch<cr>
+
+" remap for :Gstatus
+nnoremap <D-g> :Gstatus<cr>
 
 " go back to file explorer
 nnoremap - :Explore<cr>
@@ -112,6 +113,11 @@ nnoremap <D-d> :bufdo bd!<cr>
 " cycle between two last buffers
 nnoremap <D-b> <C-^>
 
+" auto indent tag in insert
+inoremap <M-o> <cr><ESC>O
+
+" compile js files
+nnoremap <Leader><Leader>c :!node %<cr>
 
 " /----------------- PLUGINS CONFIGS ------------------/
 
@@ -130,8 +136,6 @@ let g:mta_filetypes = {
 
 " Javascript syntax libraries
 let g:used_javascript_libs='jquery,angularjs'
-" autocmd BufReadPre *.js let b:javascript_lib_use_jquery=1
-" autocmd BufReadPre *.js let b:javascript_lib_use_angularjs=0
 
 " Colorizer
 let g:colorizer_auto_filetype='scss,css,html'
@@ -152,12 +156,6 @@ let g:ag_working_path_mode="r"            " search from root
 " use ag for searching
 set grepprg=ag\ --nogroup\ --nocolor
 let g:grep_cmd_opts='--line-numbers --noheading'
-
-" prevent NERDTree override netrw
-let NERDTreeHijackNetrw=0
-" let NERDTreeIgnore=['\.vim$', '\~$']
-nmap <D-k>b :NERDTreeToggle<cr>
-
 
 " CtrlP configs
 " <C-d> for toggle between file and path
@@ -189,7 +187,22 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height= 7
-let g:syntastic_javascript_checkers = ['jshint']
+" let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_mode_map = {
+        \ "mode": "active",
+        \ "active_filetypes": [],
+        \ "passive_filetypes": ["html", "css", "scss"] }
+
+let g:syntastic_javascript_jshint_quiet_messages = {
+      \ "regex": 'use strict' }
+
+" Syntastic quiet messages template
+" let g:syntastic_quiet_messages = {
+"       \ "!level":  "errors",  " or warnings
+"       \ "type":    "style",   " or syntax
+"       \ "regex":   '\m\[C03\d\d\]',   " matched error msg
+"       \ "file:p":  ['\m^/usr/include/', '\m\c\.h$'] }   " matched filename
+
 nnoremap <f1> :SyntasticToggleMode<cr>
 nnoremap <f2> :SyntasticCheck<cr>
 nnoremap <f3> :SyntasticReset<cr>
@@ -201,49 +214,22 @@ nnoremap <M-j> :MultipleCursorsFind <C-r>/<cr>
 vnoremap <M-j> :MultipleCursorsFind <C-r>/<cr>
 
 " /----------------- AUTO COMMAND ------------------/
-" auto source the .vimrc file on save, autogroup autocmd!
-" clear out the group, start from scratch, only autocmd once
 
-augroup tab_config
-  autocmd!
-  autocmd Filetype javascript setlocal softtabstop=4
-  autocmd Filetype javascript setlocal shiftwidth=4
-augroup END
+" augroup js_tab_config
+"   autocmd!
+"   autocmd Filetype javascript setlocal softtabstop=4
+"   autocmd Filetype javascript setlocal shiftwidth=4
+" augroup END
 
-augroup reload_vimrc
-  autocmd!
-  autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
-augroup END
+" augroup reload_vimrc
+"   autocmd!
+"   autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+" augroup END
 
-
-" /----------------- Laravel-Specific ------------------/
-
-" nmap <Leader>lr :e app/Http/routes.php<cr>
-" nmap <Leader>lm :!php artisan make:
 
 
 " /----------------- Macvim-Specific ------------------/
 if has("gui_macvim")
-    " disable OS X to use Opt key
+    " enable bindings to <M-..>
     set macmeta
 endif
-
-
-" /----------------- Notes -----------------/
-
-" Syntastic
-" :SyntasticInfo    // show checkers
-" :h syntastic-checkers     // what checkers are supported
-" :lclose | :lnexp | :lprevious  // close error pane | next | prev
-" :SyntasticToggleMode
-" :SyntasticReset           // reset location pane
-
-" Auto_pairs
-" after ; hit } to jump out
-" <M-b> back edit
-" <M-n> next matching pairs
-" <M-p> toggle app
-" <M-e> wrap
-
-" Misc
-" word count g, <C-g>
