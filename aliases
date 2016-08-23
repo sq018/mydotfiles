@@ -1,0 +1,3 @@
+alias soz="source $HOME/.zshrc"
+alias reh="rbenv rehash"
+alias ag="ag --path-to-agignore $HOME/.agignore"
