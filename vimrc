@@ -5,7 +5,7 @@ so ~/.vim/plugins.vim
 
 syntax enable
 set background=dark
-colorscheme dracula
+colorscheme solarized
 
 
 let mapleader=','
@@ -13,7 +13,7 @@ let mapleader=','
 " /----------------- VISUALS ------------------/
 
 set guifont=Fira\ Code:h14
-set macligatures
+" set macligatures
 
 " set mvim line height, set iterm lh in the app's setting
 set linespace=3
@@ -39,7 +39,7 @@ set guioptions-=R
 
 " set a mark for col 80th
 set colorcolumn=80
-highlight ColorColumn ctermbg=darkgray guibg=#444759
+highlight ColorColumn ctermbg=darkgray guibg=#073642
 
 " set vertical split bar syle
 set fillchars=
@@ -103,7 +103,7 @@ nnoremap <Leader>sv :so $MYVIMRC<cr>
 
 " nnoremap <Leader><space> :nohlsearch<cr>
 
-" remap for :Gstatus
+" remap for Fugitive :Gstatus Command-g
 nnoremap <D-g> :Gstatus<cr>
 
 " go back to file explorer
@@ -113,11 +113,9 @@ nnoremap <D-d> :bufdo bd!<cr>
 " cycle between two last buffers
 nnoremap <D-b> <C-^>
 
-" auto indent tag in insert
+" auto indent tag in insert by Option-o
 inoremap <M-o> <cr><ESC>O
 
-" compile js files
-nnoremap <Leader><Leader>c :!node %<cr>
 
 " /----------------- PLUGINS CONFIGS ------------------/
 
@@ -141,7 +139,6 @@ let g:used_javascript_libs='jquery,angularjs'
 let g:colorizer_auto_filetype='scss,css,html'
 let g:colorizer_skip_comments = 1
 
-
 " Emmet-vim
 let g:user_emmet_leader_key='<C-e>'
 
@@ -159,6 +156,7 @@ let g:grep_cmd_opts='--line-numbers --noheading'
 
 " CtrlP configs
 " <C-d> for toggle between file and path
+" Command-P for trigger ctrlp
 let g:ctrlp_map='<D-p>'
 nmap <D-r> :CtrlPBufTag<cr>
 nmap <D-e> :CtrlPMRU<cr>
@@ -168,7 +166,6 @@ let g:ctrlp_match_window='bottom,order:btt,min:1,max:30,results:30'
 let g:ctrlp_user_command='ag -Q -l --nocolor --hidden -g "" %s'
 " ag is fast enough that CtrlP doesn't need to cache
 let g:ctrlp_use_caching=0
-
 
 " UltiSnips
 " trigger configuration
@@ -227,9 +224,9 @@ vnoremap <M-j> :MultipleCursorsFind <C-r>/<cr>
 " augroup END
 
 
-
 " /----------------- Macvim-Specific ------------------/
 if has("gui_macvim")
     " enable bindings to <M-..>
     set macmeta
 endif
+
